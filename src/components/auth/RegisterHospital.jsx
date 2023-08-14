@@ -53,7 +53,10 @@ const RegisterHospital = () => {
 
     try {
       setLoading(true);
-      const response = await axios.post("/api/hospitals", formData);
+      const response = await axios.post(
+        "https://kira-backend.onrender.com/api/hospitals",
+        formData
+      );
 
       localStorage.setItem("hospitalToken", response.data.jwtToken);
       navigate("/hospital-home");

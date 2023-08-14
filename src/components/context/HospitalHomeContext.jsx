@@ -7,7 +7,9 @@ const HospitalHomeProvider = ({ children }) => {
   const [hospitalInfo, setHospitalInfo] = useState([]);
 
   const fetchHospitalInfo = async (token) => {
-    const res = await axios.get(`/api/hospitals/profile/${token}`);
+    const res = await axios.get(
+      `https://kira-backend.onrender.com/api/hospitals/profile/${token}`
+    );
 
     setHospitalInfo(res.data);
   };
