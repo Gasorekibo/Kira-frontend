@@ -77,13 +77,6 @@ const RegisterUser = () => {
   if (error) {
     toast.error(error);
   }
-  // if (loading) {
-  //   return (
-  //     <div className="flex content-center items-center mt-80">
-  //       <Spinner />
-  //     </div>
-  //   );
-  // }
 
   const handleNavigate = () => {
     navigate("/login-user");

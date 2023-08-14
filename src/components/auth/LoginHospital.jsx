@@ -36,10 +36,7 @@ const LoginHospital = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const result = await axios.post(
-        "http://localhost:5000/api/hospitals/auth",
-        formData
-      );
+      const result = await axios.post("/api/hospitals/auth", formData);
       const { jwtToken } = result.data;
       if (jwtToken) {
         localStorage.setItem("hospitalToken", jwtToken);

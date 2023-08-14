@@ -9,7 +9,9 @@ import "react-toastify/dist/ReactToastify.css";
 import { HospitalAuthProvider } from "./components/context/HospitalAuthProvider";
 import { HospitalHomeProvider } from "./components/context/HospitalHomeContext";
 import { HospitalsDataProvider } from "./components/context/HospitalsDataContext";
+import { disableReactDevTools } from "@fvilers/disable-react-devtools";
 
+if (process.env.REACT_APP_NODE_ENV === "production") disableReactDevTools();
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>

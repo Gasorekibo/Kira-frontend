@@ -31,13 +31,13 @@ const HospitalHome = () => {
 
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:5000/api/services", {
+      const res = await axios.post("/api/services", {
         hospital_id: hospitalInfo._id,
         name,
         description,
       });
 
-      toast.success("Service Created Successfully", { autoClose: 30000 });
+      toast.success("Service Created Successfully", { autoClose: 50000 });
       handleReload();
       console.log(res.data);
     } catch (error) {
@@ -49,9 +49,7 @@ const HospitalHome = () => {
 
   const handleViewSchedules = async () => {
     try {
-      const schedules = await axios.get(
-        `http://localhost:5000/api/events/${hospitalInfo._id}`
-      );
+      const schedules = await axios.get(`/api/events/${hospitalInfo._id}`);
       sessionStorage.setItem("schedules", JSON.stringify(schedules.data));
       if (schedules.data.length > 0) {
         navigate("/hospital-home/schedules");

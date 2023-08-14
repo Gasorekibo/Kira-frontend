@@ -15,7 +15,7 @@ const HospitalsDataProvider = ({ children }) => {
 
   const fetchHospitals = async () => {
     try {
-      const hospitals = await axios.get("http://localhost:5000/api/hospitals");
+      const hospitals = await axios.get("/api/hospitals");
       setData(hospitals.data);
     } catch (error) {
       console.error(error);
