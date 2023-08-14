@@ -15,7 +15,7 @@ const HospitalsDataProvider = ({ children }) => {
 
   const fetchHospitals = async () => {
     try {
-      const hospitals = await axios.get("/api/hospitals");
+      const hospitals = await axios.get("https://kira-backend.onrender.com/api/hospitals");
       setData(hospitals.data);
     } catch (error) {
       console.error(error);
